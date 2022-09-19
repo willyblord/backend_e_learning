@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\CustomerAuthController;
-use App\Http\Controllers\jointableController;
+use App\Http\Controllers\JointableController;
 use App\Http\Controllers\roleController;
 use App\Http\Controllers\chapersController;
 use App\Http\Controllers\courses;
@@ -44,15 +44,15 @@ Route::get('getMentor', [CustomerAuthController::class,'getMentor']);
 // forget password
 Route::post('/forgetPasword', [PasswordResetRequestController::class, 'forgetPasword']);
 //
-Route::get('getContent',[jointableController::class, 'getContent']);
+Route::get('getContent',[JointableController::class, 'getContent']);
 // post courses
 Route::post('postCourses', [CoursesController::class, 'postCourses']);
 Route::put('updateCourses/{course_id}', [CoursesController::class, 'updateCourses']);
 // end of
-Route::get('getCoursesById/{course_id}', [jointableController::class, 'getCoursesById']);
+Route::get('getCoursesById/{course_id}', [JointableController::class, 'getCoursesById']);
 
-Route::get('getCourses', [jointableController::class, 'getCourses']);
-Route::delete("deleteCourses/{course_id}",[jointableController::class,'deleteCourses']);
+Route::get('getCourses', [JointableController::class, 'getCourses']);
+Route::delete("deleteCourses/{course_id}",[JointableController::class,'deleteCourses']);
 Route::get('paginationCourses', [CoursesController::class, 'paginationCourses']);
 // CHAPTER MGT API
 Route::post('addChapters', [ChapersController::class, 'addChapters']);
@@ -76,9 +76,9 @@ Route::get("getRolebyId/{id}",[roleController::class, 'getRolebyId']);
 
 
 // post conent db
-Route::post('contentCreater', [jointableController::class, 'contentCreater']);
-Route::get('contentView', [jointableController::class, 'contentView']);
-Route::get('getContentById/{content_id}',[jointableController::class,'getContentById']);
+Route::post('contentCreater', [JointableController::class, 'contentCreater']);
+Route::get('contentView', [JointableController::class, 'contentView']);
+Route::get('getContentById/{content_id}',[JointableController::class,'getContentById']);
 
 // exam module
 Route::post('postExam', [examController::class, 'postExam']);
