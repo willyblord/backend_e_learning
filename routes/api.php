@@ -6,7 +6,7 @@ use App\Http\Controllers\JWTController;
 use App\Http\Controllers\CustomerAuthController;
 use App\Http\Controllers\JointableController;
 use App\Http\Controllers\roleController;
-use App\Http\Controllers\chapersController;
+use App\Http\Controllers\ChapersController;
 use App\Http\Controllers\courses;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\examController;
@@ -62,7 +62,7 @@ Route::get("getChapterById/{chapter_id}",[ChapersController::class, 'getChapterB
 Route::get('getCoursesbyid/{course_id}',[CoursesController::class,'getCoursesbyid']);
 
 //Route::get("getAllChapterbycourses/{course_id}", [ChapersController::class,'getAllChapterbycourses']);
-// Route::get("getAllChapterbycourses/{chapter_id}", [jointableController::class,'getAllChapterbycourses']);
+// Route::get("getAllChapterbycourses/{chapter_id}", [JointableController::class,'getAllChapterbycourses']);
 Route::delete("deleteChapter/{id}",[ChapersController::class, 'deleteChapter']);
 
 
